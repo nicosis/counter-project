@@ -34,3 +34,7 @@ body {
 .nextBtn:hover {
   background: var(--lightBlue);
 }
+
+#divCounter {
+  background-color: #f1742b;
+}

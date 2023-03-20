@@ -1,22 +1,25 @@
 let count = 0;
-let counter = document.querySelector('#counter');
 let btnLower = document.querySelector('.prevBtn');
 let btnAdd = document.querySelector('.nextBtn');
 
 btnAdd.addEventListener('click', () => {
-    count++
-    counter.innerHTML = count
-    if (count === 0)
-        counter.style.color = 'black';
-    else if (count > 0)
-        counter.style.color = 'green';
+    count++;
+    updateCounter(count);
 });
 
 btnLower.addEventListener('click', () => {
     count--
-    counter.innerHTML = count
+    updateCounter(count);
+});
+
+updateCounter = (count) => {
+    let counter = document.querySelector('#counter');
+    counter.innerHTML = count;
+
     if (count === 0)
         counter.style.color = 'black';
     else if (count < 0)
         counter.style.color = 'red';
-});
+    else if (count > 0)
+        counter.style.color = 'green';
+};
